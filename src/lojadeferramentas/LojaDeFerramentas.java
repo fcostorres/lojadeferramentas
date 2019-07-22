@@ -5,9 +5,9 @@ package lojadeferramentas;
  * @author TORRES
  *
  */
-import model.dao.DAO;
-import java.lang.*;
-import java.util.*;
+import java.util.List;
+import model.bean.Customer;
+import model.dao.CustomerDAO;
 
 public class LojaDeFerramentas {
 
@@ -18,8 +18,18 @@ public class LojaDeFerramentas {
         System.out.println("vamos testar o mysql");
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            System.out.printf(" pronto o mysql carregou");
+
+            CustomerDAO clienteDAO = new CustomerDAO();
+            List<Customer> listaDeClientes = clienteDAO.buscar();
+            
+            for(Customer cliente : listaDeClientes){
+                System.out.println("_________");
+                System.out.println(cliente.getCustomerId());
+                System.out.println(cliente.getCustomerName());
+                System.out.println(cliente.getPhoneNumber());
+                System.out.println(cliente.getAddress());
+            }
+            
         } catch (Exception e) {
             System.out.printf(" não carregou: " + e.getMessage());
         } finally {

@@ -4,39 +4,40 @@ import java.util.Objects;
 
 
 public class Customer {
-    public String tabela = "customer";
-    private String custumerId;
-    private String custumerName;
+    public static String tabela = "customer";
+    public static String nomeIdTabela = "customerId";
+    private String customerId;
+    private String customerName;
     private String phoneNumber;
     private String address;
 
-    public Customer(String custumerId) {
-        this.custumerId = custumerId;
+    public Customer(String customerId) {
+        this.customerId = customerId;
     }
 
-    public Customer(String custumerId, String custumerName, String phoneNumber, String address) {
-        this.custumerId = custumerId;
-        this.custumerName = custumerName;
+    public Customer(String customerId, String customerName, String phoneNumber, String address) {
+        this.customerId = customerId;
+        this.customerName = customerName;
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
     
     
 
-    public String getCustumerId() {
-        return custumerId;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setCustumerId(String custumerId) {
-        this.custumerId = custumerId;
+    public void setCustomerId(String custumerId) {
+        this.customerId = custumerId;
     }
 
-    public String getCustumerName() {
-        return custumerName;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setCustumerName(String custumerName) {
-        this.custumerName = custumerName;
+    public void setCustomerName(String custumerName) {
+        this.customerName = custumerName;
     }
 
     public String getPhoneNumber() {
@@ -58,7 +59,7 @@ public class Customer {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.custumerId);
+        hash = 97 * hash + Objects.hashCode(this.customerId);
         return hash;
     }
 
@@ -74,7 +75,7 @@ public class Customer {
             return false;
         }
         final Customer other = (Customer) obj;
-        if (!Objects.equals(this.custumerId, other.custumerId)) {
+        if (!Objects.equals(this.customerId, other.customerId)) {
             return false;
         }
         return true;
@@ -82,7 +83,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Dados do cliente{" + "codigo=" + custumerId + ",Nome=" + custumerName + '}';
+        return "Dados do cliente{" + "codigo=" + customerId + ",Nome=" + customerName + '}';
     }
     
     
