@@ -4,7 +4,7 @@ import java.util.Objects;
 
 
 public class Customer {
-    private String coluna = "customer";
+    public String tabela = "customer";
     private String custumerId;
     private String custumerName;
     private String phoneNumber;
